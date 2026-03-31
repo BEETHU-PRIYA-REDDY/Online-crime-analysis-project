@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2 class="menu-title">Menu</h2>
+        <a href="/addcrime">Add Crime</a>
+        <a href="/viewcrime">View Crime</a>
+        <a href="/analysis">Crime Analysis</a>
+        <a href="/chart">Crime Chart</a>
+        <a href="/prediction">Crime Prediction</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- Title Center -->
+        <h1 class="main-title">
+            ONLINE CRIME ANALYSIS AND PREDICTION SYSTEM
+        </h1>
+
+        <!-- Welcome Box -->
+        <div class="welcome-box">
+            <h2>Welcome to Dashboard</h2>
+
+            <div class="dashboard-buttons">
+                <button onclick="location.href='/addcrime'">Add Crime</button>
+                <button onclick="location.href='/viewcrime'">View Crime</button>
+                <button onclick="location.href='/analysis'">Crime Analysis</button>
+                <button onclick="location.href='/chart'">Crime Chart</button>
+                <button onclick="location.href='/prediction'">Crime Prediction</button>
+                <button onclick="location.href='/logout'">Logout</button>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <a href="/login" class="back-btn">Back</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

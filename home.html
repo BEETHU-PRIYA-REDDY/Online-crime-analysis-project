@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Crime Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body style="background: url('{{ url_for('static', filename='img_3.png') }}') no-repeat center center/cover;">
+
+    <div class="overlay"></div>
+
+    <div class="content">
+
+        <h1 class="title">
+            ONLINE CRIME ANALYSIS & PREDICTION SYSTEM
+        </h1>
+
+        <p class="description">
+            An AI-powered intelligent platform designed to analyze crime data,
+            detect hidden patterns, identify high-risk zones, and predict future
+            criminal activities using advanced data analytics and machine learning
+            techniques. This system supports smarter law enforcement decisions
+            and promotes a safer society.
+        </p>
+
+        <a href="{{ url_for('login') }}" class="btn">
+            LOGIN
+        </a>
+
+    </div>
+
+</body>
+</html>

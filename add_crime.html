@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Crime</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url("/static/img_6.png") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        /* Overlay */
+        .overlay {
+            background: rgba(0, 0, 0, 0.85);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* Big Title */
+        .title {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 20px;
+            color: #00f5d4;
+            text-shadow: 0 0 15px #00f5d4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 10px;
+            box-shadow: 0 0 10px #00f5d4;
+        }
+
+        .navbar a {
+            color: #00f5d4;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: white;
+        }
+
+        /* Form Section */
+        .form-container {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #111;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00f5d4;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .btn-group {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background-color: #00f5d4;
+        }
+
+        .clear-btn {
+            background-color: orange;
+        }
+
+        .back-btn {
+            background-color: red;
+            color: white;
+        }
+
+        /* Table Section */
+        table {
+            width: 90%;
+            margin: 30px auto;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #00f5d4;
+            color: black;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #1c1c1c;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="overlay">
+
+    <!-- Big Title -->
+    <div class="title">
+       ONLINE CRIME ANALYSIS AND PREDICTION SYSTEM
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar">
+        <a href="/addcrime">Add Crime</a>
+        <a href="/viewcrime">View Crimes</a>
+        <a href="/crimeanalysis">Crime Analysis</a>
+        <a href="/prediction">crime prediction</a>
+        <a href="/chart">crime chart</a>
+        <a href="/logout">logout</a>
+    </div>
+
+    <!-- Add Crime Form -->
+    <div class="form-container">
+        <h2 style="text-align:center; color:#00f5d4;">Add Crime Record</h2>
+
+        <form method="POST" action="{{ url_for('add_crime') }}">
+            <input type="text" name="crime_type" placeholder="Crime Type" required>
+            <input type="text" name="location" placeholder="Location" required>
+            <input type="date" name="date" required>
+            <textarea name="description" placeholder="Description" required></textarea>
+
+            <div class="btn-group">
+                <button type="submit" class="btn submit-btn">Submit</button>
+                <button type="reset" class="btn clear-btn">Clear</button>
+                <a href="{{ url_for('dashboard') }}" style="text-decoration:none;">
+                    <button type="button" class="btn back-btn">Back</button>
+                </a>
+            </div>
+        </form>
+    </div>
+

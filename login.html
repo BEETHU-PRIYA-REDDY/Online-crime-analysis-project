@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Crime Analysis and Prediction System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url("{{ url_for('static', filename='img_5.png') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            margin-right: 100px;
+            border-radius: 10px;
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            position: absolute;
+            top: 30px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 15px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 48%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn {
+            background-color: #00bfff;
+            color: white;
+        }
+
+        .clear-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .links {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .links a {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 0 5px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ONLINE CRIME ANALYSIS  AND PREDICTION SYSTEM</h1>
+
+    <div class="overlay">
+        <div class="login-box">
+            <form method="POST">
+
+                <label>Username</label>
+                <input type="text" name="username" required>
+
+                <label>Password</label>
+                <input type="password" name="password" required>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <button type="submit" class="btn submit-btn">Submit</button>
+                    <button type="reset" class="btn clear-btn">Clear</button>
+                </div>
+
+                <div class="links">
+                    <a href="/forgot">Forgot Password?</a> |
+                    <a href="/">Back</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
